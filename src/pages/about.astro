@@ -1,5 +1,21 @@
 ---
+import type { TIdentity } from "../utils/type"
 
+const pageTitle:string = "About"
+
+const identity:TIdentity = {
+	country: "Indonesia",
+	firstName: "Benedict",
+	lastName: "Ell Nino",
+	occupation: "Programmming",
+	hobbies: ["Ilustrator", "Software Engineer"]
+}
+
+const skills:string[] = ["NextJS", "TailwindCSS", "NestJS", ".NET", "C#"]
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -8,13 +24,35 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About - Blog App</title>
+		<title>{pageTitle} - Blog App</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			h1 {
+			  color: purple;
+			  font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+    			text-transform: var(--textCase);
+			}
+		  </style>
 	</head>
 	<body>
         <button><a href="/">Home</a></button>
         <button><a href="/about">About</a></button>
         <button><a href="/blog">Blog</a></button>
 		<h1>About Me</h1>
-        <h2>...and my new Astro Site</h2>
+        <p>Here are a few facts about me:</p>
+		<ul>
+			<li>My name is {identity.firstName}.</li>
+			<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+			{identity.hobbies.length >= 2 &&
+				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+			}
+			</ul>
+			<p>My skills are:</p>
+		<ul>
+		{skills.length >= 5 ? skills.map((skill) => <li class="skill">{skill}</li>) : null}
+		</ul>
 	</body>
 </html>
