@@ -1,5 +1,9 @@
 ---
 import type { TIdentity } from "../utils/type"
+import '../styles/global.css'
+import Navigation from "../components/Navigation.astro"
+import Footer from "../components/Social.astro"
+import Social from "../components/Social.astro"
 
 const pageTitle:string = "About"
 
@@ -38,9 +42,7 @@ const textCase = "uppercase";
 		  </style>
 	</head>
 	<body>
-        <button><a href="/">Home</a></button>
-        <button><a href="/about">About</a></button>
-        <button><a href="/blog">Blog</a></button>
+		<Navigation/>
 		<h1>About Me</h1>
         <p>Here are a few facts about me:</p>
 		<ul>
@@ -54,5 +56,7 @@ const textCase = "uppercase";
 		<ul>
 		{skills.length >= 5 ? skills.map((skill) => <li class="skill">{skill}</li>) : null}
 		</ul>
+		<Social platform="twitter" username="vaneshka_00" />
+		<Social platform="github" username="ninoslat1" />
 	</body>
 </html>

@@ -1,4 +1,8 @@
 ---
+import Footer from "../components/Social.astro"
+import Navigation from "../components/Navigation.astro"
+import Social from "../components/Social.astro"
+
 const pageTitle:string = "Blog"
 ---
 
@@ -11,14 +15,14 @@ const pageTitle:string = "Blog"
 		<title>{pageTitle} - Blog App</title>
 	</head>
 	<body>
-        <button><a href="/">Home</a></button>
-        <button><a href="/about">About</a></button>
-        <button><a href="/blog">Blog</a></button>
+        <Navigation/>
 		<h1>My Post</h1>
         <ul>
             <li><a href="/posts/crypto/">Basic Crypto</a></li>
             <li><a href="/posts/feistel/">Feistel Cipher</a></li>
             <li><a href="/posts/stream-cipher/">Stream Cipher</a></li>
         </ul>
+		<Social platform="twitter" username="vaneshka_00" />
+		<Social platform="github" username="ninoslat1" />
 	</body>
 </html>
