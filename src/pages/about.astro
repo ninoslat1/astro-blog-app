@@ -4,6 +4,7 @@ import '../styles/global.css'
 import Navigation from "../components/Navigation.astro"
 import Footer from "../components/Social.astro"
 import Social from "../components/Social.astro"
+import Hamburger from "../components/Hamburger.astro"
 
 const pageTitle:string = "About"
 
@@ -42,6 +43,7 @@ const textCase = "uppercase";
 		  </style>
 	</head>
 	<body>
+		<Hamburger />
 		<Navigation/>
 		<h1>About Me</h1>
         <p>Here are a few facts about me:</p>
@@ -58,5 +60,8 @@ const textCase = "uppercase";
 		</ul>
 		<Social platform="twitter" username="vaneshka_00" />
 		<Social platform="github" username="ninoslat1" />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>

@@ -2,6 +2,7 @@
 import Footer from "../components/Social.astro"
 import Navigation from "../components/Navigation.astro"
 import Social from "../components/Social.astro"
+import Hamburger from "../components/Hamburger.astro"
 
 const pageTitle:string = "Blog"
 ---
@@ -15,6 +16,7 @@ const pageTitle:string = "Blog"
 		<title>{pageTitle} - Blog App</title>
 	</head>
 	<body>
+		<Hamburger />
         <Navigation/>
 		<h1>My Post</h1>
         <ul>
@@ -24,5 +26,8 @@ const pageTitle:string = "Blog"
         </ul>
 		<Social platform="twitter" username="vaneshka_00" />
 		<Social platform="github" username="ninoslat1" />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>

@@ -1,4 +1,5 @@
 ---
+import Hamburger from "../components/Hamburger.astro"
 import Navigation from "../components/Navigation.astro"
 import Social from "../components/Social.astro"
 
@@ -14,9 +15,13 @@ const pageTitle:string = "Home"
 		<title>{pageTitle} - Blog App</title>
 	</head>
 	<body>
+		<Hamburger/>
 		<Navigation/>
 		<h1>Astro</h1>
 		<Social platform="twitter" username="vaneshka_00" />
 		<Social platform="github" username="ninoslat1" />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
