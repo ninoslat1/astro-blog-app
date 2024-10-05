@@ -1,27 +1,8 @@
 ---
-import Hamburger from "../components/Hamburger.astro"
-import Navigation from "../components/Navigation.astro"
-import Social from "../components/Social.astro"
-
-const pageTitle:string = "Home"
+import Base from "../layouts/Base.astro"
+const pageTitle = "Home"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - Blog App</title>
-	</head>
-	<body>
-		<Hamburger/>
-		<Navigation/>
-		<h1>Astro</h1>
-		<Social platform="twitter" username="vaneshka_00" />
-		<Social platform="github" username="ninoslat1" />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<Base pageTitle={pageTitle}>
+	<h2>Home</h2>
+</Base>

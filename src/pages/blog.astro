@@ -1,33 +1,15 @@
 ---
-import Footer from "../components/Social.astro"
-import Navigation from "../components/Navigation.astro"
-import Social from "../components/Social.astro"
-import Hamburger from "../components/Hamburger.astro"
+import Base from "../layouts/Base.astro"
 
 const pageTitle:string = "Blog"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - Blog App</title>
-	</head>
-	<body>
-		<Hamburger />
-        <Navigation/>
-		<h1>My Post</h1>
-        <ul>
-            <li><a href="/posts/crypto/">Basic Crypto</a></li>
-            <li><a href="/posts/feistel/">Feistel Cipher</a></li>
-            <li><a href="/posts/stream-cipher/">Stream Cipher</a></li>
-        </ul>
-		<Social platform="twitter" username="vaneshka_00" />
-		<Social platform="github" username="ninoslat1" />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<Base pageTitle={pageTitle}>
+	<h1>My Post</h1>
+	<ul>
+		<li><a href="/posts/crypto/">Basic Crypto</a></li>
+		<li><a href="/posts/feistel/">Feistel Cipher</a></li>
+		<li><a href="/posts/stream-cipher/">Stream Cipher</a></li>
+	</ul>
+</Base>
+
